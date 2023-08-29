@@ -1,8 +1,12 @@
-from fcfs import fcfs_scheduling
-from sjf import sjf_scheduling
-from rr import round_robin_scheduling
-from srtf import srtf_scheduling
 import os
+import sys
+
+from fcfs import fcfs_scheduling
+from rr import round_robin_scheduling
+from sjf import sjf_scheduling
+from srtf import srtf_scheduling
+from priop import priop_scheduling
+
 
 class Scheduler:
     def __init__(self):
@@ -21,18 +25,53 @@ class Scheduler:
                 round_robin_scheduling(file_name, time_quantum)
             elif algorithm_name == 'srtf':
                 srtf_scheduling(file_name)
+            elif algorithm_name == 'priop':
+                priop_scheduling(file_name)
             else:
                 raise ValueError(f"Algorítmo desconhecido: {algorithm_name}")
         except FileNotFoundError:
             print(f"Erro: arquivo '{file_name}' não encontrado")
 
 
+def print_usage():
+    print("Uso: python main.py [opções] [nome_arquivo] [algorítmo]")
+    print()
+    print("Opções:")
+    print("  -h, --help     Mostrar essa mensagem de ajuda e sair")
+    print()
+    print("Argumentos:")
+    print("  nome_arquivo     Nome do arquivo de texto (opcional)")
+    print()
+    print("  algorítmo     Adiciona um algorítmo de escalonamento (FCFS, SJF, Round Robin, SRTF, PRIOp)")
+
+
 if __name__ == '__main__':
     scheduler = Scheduler()
 
-    # Pegar algorítmo e nome do arquivo do usuário
-    algorithm_name = input("Digite um algorítmo de escalonamento (FCFS, SJF, Round Robin, SRTF): ").lower().replace(" ", "")
-    file_name = input("Enter input file name: ").lower()
+    # Checar se -h ou --help foram providenciados
+    if '-h' in sys.argv or '--help' in sys.argv:
+        print_usage()
+        sys.exit(0)
+
+    # Checar se foi providenciado um arg com nome do arquivo
+    if len(sys.argv) > 1:
+        file_name = sys.argv[1]
+    else:
+        # Pedir o nome do arquivo pro usuário
+        file_name = input("Digite o nome do arquivo: ").lower()
+
+    # Se precisar, adicionar .txt no final do nome do arquivo
+    if not file_name.endswith('.txt'):
+        file_name = file_name + '.txt'
+
+    # Checar se foi providenciado um arg com nome do algorítmo
+    if len(sys.argv) > 2:
+        algorithm_name = sys.argv[2].lower().replace(' ', '')
+    else:
+        # Pegar algorítmo e nome do arquivo do usuário
+        algorithm_name = input("Digite um algorítmo de escalonamento (FCFS, SJF, Round Robin, SRTF): ").lower().replace(
+            ' ',
+            '')
 
     # Se usuário não botou ".txt" no nome no arquivo, adicionar a extensão
     if not file_name.endswith('.txt'):

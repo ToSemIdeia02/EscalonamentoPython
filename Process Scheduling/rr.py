@@ -21,6 +21,7 @@ def round_robin_scheduling(file_name, time_quantum):
 
     execution_order = []
 
+    # Algorítmo RR
     while sum(remaining_time) > 0:
         for i in range(n):
             if remaining_time[i] > 0:

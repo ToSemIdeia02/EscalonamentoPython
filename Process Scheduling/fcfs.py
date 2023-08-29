@@ -1,4 +1,4 @@
-# fcfs.py
+# Algorítmo FCFS
 def fcfs_scheduling(file_name):
     # Ler dados do arquivo
     with open(file_name, 'r') as file:
@@ -15,6 +15,8 @@ def fcfs_scheduling(file_name):
     # Calcular tempo de espera e tempo de execução
     waiting_time = [0] * n
     turnaround_time = [0] * n
+
+    # Algorítmo FCFS
     for i in range(1, n):
         waiting_time[i] = processes[i - 1][2] + waiting_time[i - 1]
         turnaround_time[i] = waiting_time[i] + processes[i][2]

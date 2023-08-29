@@ -22,6 +22,7 @@ def sjf_scheduling(file_name):
 
     execution_order = []
 
+    # Algorítmo SJF
     while completed != n:
         minm = float('inf')
         shortest_process = -1
