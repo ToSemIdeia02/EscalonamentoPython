@@ -22,14 +22,14 @@ O código solicitará a introdução do algoritmo de agendamento e do nome do fi
 O arquivo de entrada deve conter uma linha por processo com o ID do processo, tempo de chegada, tempo de duração, a prioridade e o tipo separados por espaços. Por exemplo:
 
 
- Process ID  Arrival Time  Burst Time  Priority  Type 
+ Process ID |  Arrival Time | Burst Time | Priority | Type 
 
- P1          0             1           0         1    
- P2          0             2           0         1    
- P3          0             3           0         1    
- P4          0             3           0         1    
- P5          0             5           0         1    
- P6          0             7           0         1    
+ P1                 0             1           0         1    
+ P2                 0             2           0         1    
+ P3                 0             3           0         1    
+ P4                 0             3           0         1    
+ P5                 0             5           0         1    
+ P6                 0             7           0         1    
 
 
 
