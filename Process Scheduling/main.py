@@ -69,7 +69,7 @@ if __name__ == '__main__':
         algorithm_name = sys.argv[2].lower().replace(' ', '')
     else:
         # Pegar algorítmo e nome do arquivo do usuário
-        algorithm_name = input("Digite um algorítmo de escalonamento (FCFS, SJF, Round Robin, SRTF): ").lower().replace(
+        algorithm_name = input("Digite um algorítmo de escalonamento (FCFS, SJF, Round Robin, SRTF, PRIOp): ").lower().replace(
             ' ',
             '')
 
