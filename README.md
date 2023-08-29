@@ -9,7 +9,7 @@ Código do algoritmo de Escalonamento
 
 Este código implementa quatro algoritmos de agendamento diferentes: Primeiro a Chegar, Primeiro a Ser Servido (FCFS), Trabalho Mais Curto Primeiro (SJF), Round Robin e Tempo Restante Mais Curto Primeiro (SRTF).
 
-O código está organizado em arquivos separados para cada algoritmo de escalonamento (`fcfs.py`, `sjf.py`, `round_robin.py` e `srtf.py`) e um arquivo `main.py` que os importa e utiliza.
+O código está organizado em arquivos separados para cada algoritmo de escalonamento (`fcfs.py`, `sjf.py`, `rr.py` e `srtf.py`) e um arquivo `main.py` que os importa e utiliza.
 
 Para executar o código, é necessário ter o Python 3 instalado no seu computador. Você pode baixar o Python 3 do site oficial do Python: https://www.python.org/downloads/
 
